@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7148069907723622492}
   - component: {fileID: 3512449468381679923}
   - component: {fileID: 5770778159022543487}
+  - component: {fileID: 7073859116676957769}
   m_Layer: 0
   m_Name: lemon
-  m_TagString: Fruit
+  m_TagString: Lemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,5 +124,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b4dcf577195dad4382344675ac8264e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7073859116676957769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638444836145330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c604b84be841cd2469f305172aca4c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
