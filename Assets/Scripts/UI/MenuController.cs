@@ -32,7 +32,7 @@ public class MenuController : MonoBehaviour
     {
         AudioManager.Instance.PlayOneShot("LevelComplete");
 
-        _levelResultText.text = "LEVEL COMPLETE";
+        _levelResultText.text = "LEVEL PASSED";
         DeactivateObjects();
         _menuUI.SetActive(true);
     }
