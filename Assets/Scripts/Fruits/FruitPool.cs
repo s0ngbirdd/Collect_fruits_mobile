@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FruitPool : MonoBehaviour
@@ -8,11 +9,13 @@ public class FruitPool : MonoBehaviour
     [SerializeField] private Apple _applePrefab;
     [SerializeField] private Peach _peachPrefab;
     [SerializeField] private Lemon _lemonPrefab;
+    [SerializeField] private float _timeBetweenSpawns = 1.5f;
 
     // Private
     private PoolMono<Apple> _applePool;
     private PoolMono<Peach> _peachPool;
     private PoolMono<Lemon> _lemonPool;
+    private bool _isCoroutineEnd = true;
 
     private void Start()
     {
@@ -28,9 +31,10 @@ public class FruitPool : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_isCoroutineEnd)
         {
-            CreateRandomFruit();
+            _isCoroutineEnd = false;
+            StartCoroutine(WaitBeforeSpawn());
         }
     }
 
@@ -68,5 +72,13 @@ public class FruitPool : MonoBehaviour
     {
         var lemon = _lemonPool.GetFreeElement();
         lemon.transform.position = transform.position;
+    }
+
+    private IEnumerator WaitBeforeSpawn()
+    {
+        yield return new WaitForSeconds(_timeBetweenSpawns);
+
+        CreateRandomFruit();
+        _isCoroutineEnd = true;
     }
 }

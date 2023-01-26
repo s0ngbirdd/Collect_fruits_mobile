@@ -24,7 +24,7 @@ public class CollectTextPool : MonoBehaviour
 
     private void CreateCollectText()
     {
-        AudioController.Instance.PlayOneShot("AddPoint");
+        AudioManager.Instance.PlayOneShot("AddPoint");
         if (!_particleSystem.isPlaying)
         {
             _particleSystem.Play();

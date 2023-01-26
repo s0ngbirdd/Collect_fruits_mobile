@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FruitPicker : MonoBehaviour
 {
+    // Public
+    public static UnityEvent<GameObject> OnFruitGrab = new UnityEvent<GameObject>();
+    public static UnityEvent OnWrongFruitGrab = new UnityEvent();
+
     // Private
     private ObjectiveController _objectiveController;
 
@@ -14,16 +19,22 @@ public class FruitPicker : MonoBehaviour
 
     private void OnMouseOver()
     {
+        CheckForObjectiveFruit();
+    }
+
+    private void CheckForObjectiveFruit()
+    {
         if (Input.GetMouseButtonDown(0) && _objectiveController.RandomFruit.Equals(gameObject.tag))
         {
-            AudioController.Instance.PlayOneShot("Grab");
+            AudioManager.Instance.PlayOneShot("Grab");
+            OnFruitGrab?.Invoke(gameObject);
 
             _objectiveController.DecreaseNumber();
-            gameObject.SetActive(false);
         }
         else if (Input.GetMouseButtonDown(0))
         {
-            AudioController.Instance.PlayOneShot("No");
+            AudioManager.Instance.PlayOneShot("No");
+            OnWrongFruitGrab?.Invoke();
         }
     }
 }

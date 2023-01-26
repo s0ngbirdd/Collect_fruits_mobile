@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8296301630774117140}
   - component: {fileID: -5573712917382934204}
   - component: {fileID: 6913245204777606870}
-  m_Layer: 0
+  - component: {fileID: -635578174006477373}
+  m_Layer: 6
   m_Name: apple
   m_TagString: APPLE
   m_Icon: {fileID: 0}
@@ -29,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829371231341652}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &33253243558922508
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,12 +109,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &-5573712917382934204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,5 +137,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c604b84be841cd2469f305172aca4c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-635578174006477373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829371231341652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea00ac300a4a7ae468278efabb0da210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

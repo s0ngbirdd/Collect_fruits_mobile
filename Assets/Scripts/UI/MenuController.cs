@@ -10,6 +10,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject _objective;
     [SerializeField] private GameObject _timer;
     [SerializeField] private GameObject _conveyor;
+    [SerializeField] private GameObject _basket;
 
     private void Awake()
     {
@@ -29,23 +30,27 @@ public class MenuController : MonoBehaviour
 
     private void ShowCompleteMenuUI()
     {
-        AudioController.Instance.PlayOneShot("LevelComplete");
+        AudioManager.Instance.PlayOneShot("LevelComplete");
 
         _levelResultText.text = "LEVEL COMPLETE";
-        _objective.SetActive(false);
-        _timer.SetActive(false);
-        _conveyor.SetActive(false);
+        DeactivateObjects();
         _menuUI.SetActive(true);
     }
 
     private void ShowFailMenuUI()
     {
-        AudioController.Instance.PlayOneShot("LevelFailed");
+        AudioManager.Instance.PlayOneShot("LevelFailed");
 
         _levelResultText.text = "LEVEL FAILED";
+        DeactivateObjects();
+        _menuUI.SetActive(true);
+    }
+
+    private void DeactivateObjects()
+    {
         _objective.SetActive(false);
         _timer.SetActive(false);
         _conveyor.SetActive(false);
-        _menuUI.SetActive(true);
+        _basket.SetActive(false);
     }
 }

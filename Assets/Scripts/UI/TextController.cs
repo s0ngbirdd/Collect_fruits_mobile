@@ -17,6 +17,12 @@ public class TextController : MonoBehaviour
 
     private void Update()
     {
+        DisplayObjective();
+        DisplayTime();
+    }
+
+    private void DisplayObjective()
+    {
         if (_objectiveController.RandomNumber > 1 && !_objectiveController.RandomFruit.Equals("PEACH"))
         {
             _objectiveText.text = "COLLECT " + _objectiveController.RandomNumber + " " + _objectiveController.RandomFruit + "S";
@@ -29,7 +35,10 @@ public class TextController : MonoBehaviour
         {
             _objectiveText.text = "COLLECT " + _objectiveController.RandomNumber + " " + _objectiveController.RandomFruit;
         }
+    }
 
+    private void DisplayTime()
+    {
         _timerText.text = Mathf.Round(_objectiveController.Timer).ToString();
         _objectiveController.DecreaseTimer(Time.deltaTime);
     }
